@@ -78,12 +78,19 @@ namespace Minutes
             if (db.Login(tbUsername.Text, tbPassword.Text))
             {
                 lblError.Visible = false;
-                this.Close();
+                Main frm = new Main();
+                frm.Show();
+                this.Hide();
             }
             else
             {
                 lblError.Visible = true;
             }
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
             this.pnlDrag.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(710, 318);
             this.panel1.TabIndex = 1;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblError.Location = new System.Drawing.Point(245, 278);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(278, 25);
+            this.lblError.TabIndex = 6;
+            this.lblError.Text = "Invalid Username/Password";
+            this.lblError.Visible = false;
             // 
             // btnLogin
             // 
@@ -141,17 +152,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Welcome to Minutes";
             // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblError.Location = new System.Drawing.Point(245, 278);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(278, 25);
-            this.lblError.TabIndex = 6;
-            this.lblError.Text = "Invalid Username/Password";
-            this.lblError.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -164,6 +164,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.pnlDrag.ResumeLayout(false);
             this.pnlDrag.PerformLayout();
             this.panel1.ResumeLayout(false);

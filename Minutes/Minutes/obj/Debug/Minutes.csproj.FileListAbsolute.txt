@@ -14,3 +14,4 @@ C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\Google.Proto
 C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\BCrypt.Net-Next.xml
 C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\MySql.Data.xml
 C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.csproj.CopyComplete
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.Main.resources
