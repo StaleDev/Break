@@ -1,0 +1,16 @@
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\Minutes.exe.config
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\Minutes.exe
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\Minutes.pdb
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.csprojAssemblyReference.cache
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.Login.resources
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.Properties.Resources.resources
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.csproj.GenerateResource.cache
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.csproj.CoreCompileInputs.cache
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.exe
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.pdb
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\MySql.Data.dll
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\Google.Protobuf.dll
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\MySql.Data.xml
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.csproj.CopyComplete
