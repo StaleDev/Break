@@ -1,41 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 namespace Minutes
 {
     public class database
     {
-        private void runQuery()
-        {
-
-
-        }
-
         private string server;
         private string databasen;
         private string uid;
         private string dbpassword;
+        MySqlConnection conn;
+        string myConnectionString;
+
 
         public Boolean Login(string username, string password)
         {
-            server = "5.135.216.6";
-            databasen = "stale_minutes";
-            uid = "stale_stale";
-            dbpassword = "Stale2018";
-
-            MySql.Data.MySqlClient.MySqlConnection conn;
-            string myConnectionString;
-
-            myConnectionString = "server=5.135.216.6;uid=stale_stale;" +
-                "pwd=Stale2018;database=stale_minutes;sslmode=none";
-
+            server = "localhost";
+            databasen = "minutes";
+            uid = "root";
+            dbpassword = "";
+            myConnectionString = String.Format("server={0};uid={1};pwd={2};database={3};sslmode=none",server,uid,dbpassword,databasen);
             conn = new MySql.Data.MySqlClient.MySqlConnection();
-
             try
-            { 
+            {
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
             }
@@ -63,7 +50,7 @@ namespace Minutes
                         conn.Close();
                         return false;
                     }
-                }
+               }
                 else
                 {
                     conn.Close();
@@ -76,6 +63,88 @@ namespace Minutes
                 conn.Close();
                 return false;
             }
+        }
+
+        public void Update(string pinfo, string useruid, string operation)
+        {
+            server = "localhost";
+            databasen = "minutes";
+            uid = "root";
+            dbpassword = "";
+            myConnectionString = String.Format("server={0};uid={1};pwd={2};database={3};sslmode=none", server, uid, dbpassword, databasen);
+            conn = new MySql.Data.MySqlClient.MySqlConnection();
+
+            if (conn is object)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+            string programinfo = "";
+
+            if (operation == "add")
+            {
+               programinfo = String.Format("{0}{1}{2}", pinfo, Environment.NewLine, Read(useruid));
+            }
+            else if (operation == "remove")
+            {
+                programinfo = Read(useruid).Replace(pinfo, "");
+                programinfo = Regex.Replace(programinfo, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+            }
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("UPDATE users SET usr_programs = @programinfo WHERE user_uid= @useruid"), conn);
+            cmd.Parameters.AddWithValue("@programinfo", programinfo);
+            cmd.Parameters.AddWithValue("useruid", useruid);
+            cmd.ExecuteNonQuery();
+        }
+
+        public string Read(string useruid)
+        {
+            server = "localhost";
+            databasen = "minutes";
+            uid = "root";
+            dbpassword = "";
+            myConnectionString = String.Format("server={0};uid={1};pwd={2};database={3};sslmode=none", server, uid, dbpassword, databasen);
+            conn = new MySql.Data.MySqlClient.MySqlConnection();
+            try
+            {
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT usr_programs FROM users WHERE user_uid='{0}' OR user_email='{0}'", useruid), conn);
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            string data = "";
+            while (myReader.Read())
+            {  // <<- here
+                data = (myReader["usr_programs"].ToString());
+            }  // <<- here
+            myReader.Close();
+            return data;
+        }
+
+        public void RemoveProgram(string pinfo)
+        {
+            Update(pinfo, "JohnDoe", "remove");
+        }
+
+        public void AddProgram(string pinfo)
+        {
+            Update(pinfo, "JohnDoe", "add");
         }
     }
 }

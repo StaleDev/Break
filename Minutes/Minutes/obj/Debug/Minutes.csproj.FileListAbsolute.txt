@@ -15,3 +15,4 @@ C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\BCrypt.Net-N
 C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\bin\Debug\MySql.Data.xml
 C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.csproj.CopyComplete
 C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.Main.resources
+C:\Users\JuanChino\Documents\GitHub\Break\Minutes\Minutes\obj\Debug\Minutes.AddForm.resources
